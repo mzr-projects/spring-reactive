@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: spring-reactive
+  name: spring-reactive
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: spring-reactive
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: spring-reactive
+    spec:
+      containers:
+      - image: spring-reactive:latest
+        name: spring-reactive
+        resources: {}
+        imagePullPolicy: Never
+        ports:
+          - containerPort: 9099
+status: {}
