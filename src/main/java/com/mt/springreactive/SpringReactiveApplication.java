@@ -28,12 +28,14 @@ public class SpringReactiveApplication {
 
 @RestController
 @RequiredArgsConstructor
+@Slf4j
 class CustomerRestController {
 
     private final CustomerRepository customerRepository;
 
     @GetMapping("/customers")
     public Flux<Customer> customers() {
+        log.info("We are getting all customers 😁");
         return customerRepository.findAll();
     }
 }
